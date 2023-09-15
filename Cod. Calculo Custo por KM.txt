@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;
+public class Main
+{
+ public static void main(String[] args) {
+	float somarotas=0;
+	float kmlitro=Float.parseFloat("2.5");
+        int qtdrotas = Integer.parseInt(JOptionPane.showInputDialog("Entre com a quantidade de rotas: "));
+      		
+	for (int contador = 0; contador < qtdrotas; contador++) {
+        	float rota = Float.parseFloat(JOptionPane.showInputDialog("Entre com a distância em km da rota " + (contador + 1) + ": "));
+        	somarotas= somarotas+rota;
+        }
+        
+	Float totalcomb = somarotas/kmlitro;
+
+        float valorlitro = Float.parseFloat(JOptionPane.showInputDialog("Entre com o valor do litro do óleo diesel: "));
+	Float resultadofinal = totalcomb*valorlitro;
+       
+	JOptionPane.showMessageDialog(null, "O percurso total em KM é: " + somarotas + ", e será necessário de combustível: " + totalcomb + ", totalizando o custo total de combustível de R$ " + resultadofinal);
+
+  }
+}
